@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Hotel Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="/">Hotel Management System</a>
+	
+	<!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+   <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/employee}">Employee Management</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/menu}">Menu Management</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/customer}">Customer Management</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  </nav>
+	<div class="container my-2">
+	<h1> Customer List </h1>
+	<a th:href="@{/showNewCustomerForm}" class="btn btn-primary btn-sm mb-3"> Add Customer </a>
+     <table border="1" class="table table-striped table-responsive-md">
+            <thead>
+                <tr>
+                    <th>Customer First Name</th>
+                    <th>Customer Last Name</th>
+                    <th>Customer Email</th>
+                    <th> Actions </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="customer : ${listCustomer}">
+                    <td th:text="${customer.firstName}"></td>
+                    <td th:text="${customer.lastName}"></td>
+                    <td th:text="${customer.email}"></td>
+                      <td> 
+                      	<a th:href="@{/showFormForCustomerUpdate/{id}(id=${customer.id})}" class="btn btn-primary">Update</a>
+             			<a th:href="@{/deleteCustomer/{id}(id=${customer.id})}" class="btn btn-danger">Delete</a>
+                    </td>
+				</tr>
+			</tbody>
+	 </table>
+	</div>
+</body>

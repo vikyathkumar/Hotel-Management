@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Hotel Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="/">Hotel Management System</a>
+	
+	<!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+   <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/employee}">Employee Management</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/menu}">Menu Management</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/customer}">Customer Management</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  </nav>
+  
+  <img src="Hotel_Management.jpg" alt="home">
+  <p style="background-image: url('Hotel_Management.jpg');">
+ </body>
+ </html>
